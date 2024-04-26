@@ -1,0 +1,29 @@
+Title: Helm Masterclass: 50 Practical Demos for Kubernetes DevOps
+Created by: Kalyan Reddy Daida | DevOps & SRE Architect on AWS, Azure & Google Cloud PlatformsRating: 4.6 out of 5(401 ratings) 5,719 students
+
+Course Last Updated: 4/2024
+
+Course Overview: Create, Develop, Install, Upgrade, Rollback, Package, & Publish Kubernetes Helm Charts with step-by-step practical demos
+
+Description(General Idea): 
+You will master all 24 Helm commands, along with their respective subcommands and flags, through multiple practical demonstrations.
+You will learn how to develop Helm Charts through 13 Helm development demos.
+You will learn flow control actions such as If-else, With, and Range, in combination with functions like EQ, AND, BOOLEAN, OR, NOT, DEFAULT, and QUOTE.
+You will learn to create, package, install, upgrade, rollback, and uninstall Helm Charts.
+You will learn to implement Helm Dependency through 9 demos, which cover Alias, Condition, Tags, Global Values, and Import values.
+You will learn Helm concepts such as starters, plugins, hooks, tests, resource policy, and Values JSON Schema through practical demos
+You will learn to implement Helm Chart signing and verification.
+You will learn how to create a Helm Repository on GitHub and integrate it with Artifact Hub.
+
+Description(In-Depth): 
+Amazing Hands-on Step By Step Learning Experiences
+Practical demos for each and every concept
+Friendly Support in the Q&A section
+"30-Day "No Questions Asked" Money Back Guaranteed by Udemy"
+
+Pre-requisites: 
+You must have Kubernetes knowledge and experience to follow with me for hands-on activities.
+
+Who This Course Is For: 
+This course is designed for students who have completed my AWS EKS, Azure AKS, or Google GKE Kubernetes courses.
+Infrastructure Architects or Sysadmins or Developers or DevOps Engineers who are planning to master Helm.
