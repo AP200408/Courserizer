@@ -3,8 +3,10 @@ from bs4 import BeautifulSoup
 import re
 
 class CourseScraper:
-  def __init__(self, url):
+  def __init__(self, url, file_name):
     self.url = url
+    self.name = file_name
+    self.file_path = f"./files/{file_name}.txt"
     
   def is_url_valid(self):
     try:
@@ -13,7 +15,7 @@ class CourseScraper:
     except requests.RequestException:
       return False
 
-  def scrape_course_info(self, file_name):
+  def scrape_course_info(self, ):
     if not self.is_url_valid():
       return ("Invalid URL")
     
@@ -73,7 +75,8 @@ class CourseScraper:
     p_tag = exactly_learn_div.find_all('p')
     p_tags_without_strong = [p_element for p_element in exactly_learn_div.find_all('p') if not p_element.find('strong')]
 
-    with open(file_name+ ".txt", 'w') as file:
+
+    with open(self.file_path, 'w') as file:
 
       #Title
       file.write("Title: " + title + '\n')
@@ -133,7 +136,15 @@ class CourseScraper:
       if who_for:
         for li in who_for.children:
           file.write(li.get_text() + '\n')
-
-if __name__ == '__main__':
-  cs = CourseScraper('https://www.udemy.com/course/helm-masterclass-50-practical-demos-for-kubernetes-devops/')
-  cs.scrape_course_info("CustomFileN")
+          
+  def return_text_file(self):
+        try:
+            with open(self.file_path, 'rb') as file:
+                files = {'file': (self.file_name, file, 'text/plain')}
+                response = requests.post('YOUR_BACKEND_ENDPOINT', files=files)
+                if response.status_code == 200:
+                    return "Text file successfully returned to the backend."
+                else:
+                    return "Failed to return text file to the backend."
+        except FileNotFoundError:
+            return "File not found."

@@ -3,9 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Courserizer</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #ffab00;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #1e1e1e;
+      color: #ffab00;
+      border: 2px solid #ffab00;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: border-color 0.3s, color 0.3s;
+      margin: 10px;
+    }
+
+    button:hover {
+      border-color: #ffffff;
+      color: #fffdfd;
+      background-color: #ffab00;
+    }
+
+    #goBackBtn {
+      margin-top: 30px;
+    }
+
+    #goBackBtn:hover {
+      color: #1e1e1e;
+    }
+  </style>
 </head>
 <body>
-  
+  <h1>Scraped Course Information</h1>
+    {% if file_path %}
+        <p>The course information has been scraped successfully.</p>
+        <form id="downloadForm" action="/download" method="post">
+            <input type="hidden" name="file_path" value="{{ file_path }}">
+            <button class = "download-btn" type="submit">Download File</button>
+        </form>
+    {% else %}
+        <p>Oops! Something went wrong while scraping the course information.</p>
+    {% endif %}
+
+    <form action="/myapp" method="get" id="goBackBtn">
+      <button type="submit">Go Back</button>
+    </form>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var downloadForm = document.getElementById('downloadForm');
+        downloadForm.addEventListener('submit', function(event) {
+          // Prevent the default form submission
+          event.preventDefault();
+
+          // Submit the form via AJAX to trigger the download
+          var formData = new FormData(downloadForm);
+          var xhr = new XMLHttpRequest();
+          xhr.open('POST', '/download');
+          xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+          xhr.responseType = 'blob'; // Set the response type to blob
+          xhr.onload = function() {
+            if (xhr.status === 200) {
+              // Create a blob URL and initiate the download
+              var blob = new Blob([xhr.response], { type: 'text/plain' });
+              var url = window.URL.createObjectURL(blob);
+              var a = document.createElement('a');
+              a.href = url;
+              a.download = 'scraped_course.txt';
+              document.body.appendChild(a);
+              a.click();
+              window.URL.revokeObjectURL(url);
+            } else {
+              console.error('Error downloading file:', xhr.statusText);
+            }
+          };
+          xhr.send(formData);
+        });
+      });
+    </script>
 </body>
 </html>

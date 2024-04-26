@@ -11,10 +11,11 @@
         <h1>Logo</h1>
         <nav class="navigation">
             <a href= "/">Home</a>
-            <a href= "/about">About</a>
-            <a href= "/service">Service</a>
-            <a href= "/use">How To Use</a>
-            <a href= "/contact">Contact</a>
+            <a href= "{{ url_for('about') }}">About</a>
+            <a href= "{{ url_for('service') }}">Service</a>
+            <a href= "{{ url_for('how_to_use') }}">How To Use</a>
+            <a href= "{{ url_for('myapp') }}">Get Started</a>
+            <a href= "{{ url_for('contact') }}">Contact</a>
         </nav>
     </header>
 
