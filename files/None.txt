@@ -1,0 +1,46 @@
+Title: Deep Learning: Advanced Computer Vision (GANs, SSD, +More!)
+Created by: Lazy Programmer Inc.
+Rating: 4.6 out of 5(6,153 ratings) 39,292 students
+
+Course Last Updated: 4/2024
+
+Course Overview: VGG, ResNet, Inception, SSD, RetinaNet, Neural Style Transfer, GANs +More in Tensorflow, Keras, and Python
+
+Description(General Idea): 
+Understand and apply transfer learning
+Understand and use state-of-the-art convolutional neural nets such as VGG, ResNet and Inception
+Understand and use object detection algorithms like SSD
+Understand and apply neural style transfer
+Understand state-of-the-art computer vision topics
+Class Activation Maps
+GANs (Generative Adversarial Networks)
+Object Localization Implementation Project
+Understand important foundations for OpenAI ChatGPT, GPT-4, DALL-E, Midjourney, and Stable Diffusion
+
+Description(In-Depth): 
+One of the major themes of this course is that we’re moving away from the CNN itself, to systems involving CNNs.
+Instead of focusing on the detailed inner workings of CNNs (which we've already done), we'll focus on high-level building blocks. The result? Almost zero math.
+Another result? No complicated low-level code such as that written in Tensorflow, Theano, or PyTorch (although some optional exercises may contain them for the very advanced students). Most of the course will be in Keras which means a lot of the tedious, repetitive stuff is written for you.
+Or as the great physicist Richard Feynman said: "What I cannot create, I do not understand".
+My courses are the ONLY courses where you will learn how to implement machine learning algorithms from scratch
+Other courses will teach you how to plug in your data into a library, but do you really need help with 3 lines of code?
+After doing the same thing with 10 datasets, you realize you didn't learn 10 things. You learned 1 thing, and just repeated the same 3 lines of code 10 times...
+Know how to build, train, and use a CNN using some library (preferably in Python)
+Understand basic theoretical concepts behind convolution and neural networks
+Decent Python coding skills, preferably in data science and the Numpy Stack
+Check out the lecture "Machine Learning and AI Prerequisite Roadmap" (available in the FAQ of any of my courses, including the free Numpy course)
+Every line of code explained in detail - email me any time if you disagree
+No wasted time "typing" on the keyboard like other courses - let's be honest, nobody can really write code worth learning about in just 20 minutes from scratch
+Not afraid of university-level math - get important details about algorithms that other courses leave out
+
+Pre-requisites: 
+Know how to build, train, and use a CNN using some library (preferably in Python)
+Understand basic theoretical concepts behind convolution and neural networks
+Decent Python coding skills, preferably in data science and the Numpy Stack
+
+Who This Course Is For: 
+Students and professionals who want to take their knowledge of computer vision and deep learning to the next level
+Anyone who wants to learn about object detection algorithms like SSD and YOLO
+Anyone who wants to learn how to write code for neural style transfer
+Anyone who wants to use transfer learning
+Anyone who wants to shorten training time and build state-of-the-art computer vision nets fast

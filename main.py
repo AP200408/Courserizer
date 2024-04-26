@@ -15,7 +15,7 @@ class CourseScraper:
     except requests.RequestException:
       return False
 
-  def scrape_course_info(self, ):
+  def scrape_course_info(self):
     if not self.is_url_valid():
       return ("Invalid URL")
     
@@ -82,7 +82,7 @@ class CourseScraper:
       file.write("Title: " + title + '\n')
           
       # Made By
-      file.write('Created by: ' + by.get_text())
+      file.write('Created by: ' + by.get_text() + "\n")
           
       # Ratings and Number of Total Students
       file.write(rating.get_text()+ spans_without_class[0].get_text() + " " + student_number_container.get_text() +'\n\n')
