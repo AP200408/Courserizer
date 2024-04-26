@@ -7,17 +7,19 @@
     text-decoration: none;
 }
 body{
-    background: #f9f9f9;
+    background: white;
     min-height: 100vh;
     overflow-x: hidden;
+    display :flex
 }
 
 header {
+    background-color:white;
     position : absolute;
     top : 0;
     left : 0;
     width : 100%;
-    padding : 30px 100px;
+    padding : 20px 50px;
     display : flex;
     justify-content: space-between;
     align-items:center;
@@ -25,6 +27,25 @@ header {
 }
 
 .logo{
-    font-size: 2rem;
-    color :#359381;
+    font-size: 0.5rem;
+    pointer-events : none;
 }
+
+.nav a{
+    text-decoration: none;
+    font-size: 15px;
+    color : black;
+    padding : 6px 15px;
+    border-radius : 20px;
+    margin : 0 10px;
+    padding : 6px 15px;
+    border-radius : 20px;
+    margin : 0 10px;
+    font-weight : 600;
+}
+.nav a:hover{
+    transition: ease;
+    background : black;
+    color:white;
+}
+
