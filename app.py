@@ -63,9 +63,8 @@ def how_to_use():
 def myapp():
     if request.method == "POST":
         url = request.form.get('url')
-        name = request.form.get('name')
 
-        course_scraper = CourseScraper(url, name)
+        course_scraper = CourseScraper(url)
                 
         course_scraper.scrape_course_info()
 

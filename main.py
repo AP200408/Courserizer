@@ -1,12 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
 import re
+import os
 
 class CourseScraper:
-  def __init__(self, url, file_name):
+  def __init__(self, url):
     self.url = url
-    self.name = file_name
-    self.file_path = f"./files/{file_name}.txt"
+    self.name = f"course_info.txt"
+    self.file_path = os.path.join('downloads', self.name)
+    os.makedirs(os.path.dirname(self.file_path), exist_ok=True)
     
   def is_url_valid(self):
     try:
@@ -72,10 +74,8 @@ class CourseScraper:
     for div in first_div_inside_exactly_learn.find_all('div'):
       second_div_empty.append(div)
 
-    p_tag = exactly_learn_div.find_all('p')
     p_tags_without_strong = [p_element for p_element in exactly_learn_div.find_all('p') if not p_element.find('strong')]
-
-
+    
     with open(self.file_path, 'w') as file:
 
       #Title
@@ -137,14 +137,4 @@ class CourseScraper:
         for li in who_for.children:
           file.write(li.get_text() + '\n')
           
-  def return_text_file(self):
-        try:
-            with open(self.file_path, 'rb') as file:
-                files = {'file': (self.file_name, file, 'text/plain')}
-                response = requests.post('YOUR_BACKEND_ENDPOINT', files=files)
-                if response.status_code == 200:
-                    return "Text file successfully returned to the backend."
-                else:
-                    return "Failed to return text file to the backend."
-        except FileNotFoundError:
-            return "File not found."
+          
