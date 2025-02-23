@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    margin : 0px;
+    padding : 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+body{
+    background: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display :flex;
+    padding-top:90px;
+}
+
+header {
+    background-color:white;
+    position : fixed;
+    top : 0;
+    left : 0;
+    width : 100%;
+    padding : 10px 30px;
+    display : flex;
+    justify-content: space-between;
+    align-items:center;
+    z-index : 100;
+}
+
+.logo{
+    font-size: 0.5rem;
+    pointer-events : none;
+}
+
+.nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+}
+
+.nav .ele{
+    text-decoration: none;
+    font-size: 15px;
+    color : black;
+    padding : 6px 15px;
+    border-radius : 20px;
+    margin : 0 10px;
+    padding : 6px 15px;
+    border-radius : 20px;
+    margin : 0 10px;
+    font-weight : 600;
+}
+.nav .ele:hover{
+    transition: ease;
+    background : black;
+    color:white;
+}
+
+.nav-links .ele {
+    position: relative;
+}
+
+.nav-links .ele {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.dropdown:hover{
+    cursor:pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    top: 67%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    z-index: 80;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-content li {
+    padding: 10px;
+}
+
+.dropdown-content li:hover {
+    background-color: #f1f1f1;
+    cursor:pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content li a {
+    padding: 0px 20px;
+    color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hamburger Toggle Button */
+.toggle-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    /* Show hamburger button on mobile */
+    .toggle-button {
+      display: flex;
+    }
+    
+    /* Hide the nav menu by default */
+    .nav {
+      position: absolute;
+      top: 70px; /* Adjust based on your header height */
+      left: 0;
+      width: 100%;
+      background-color: white;
+      flex-direction: column;
+      align-items: center;
+      display: none;
+    }
+    
+    /* Show the nav menu when active */
+    .nav.active {
+      display: flex;
+    }
+    
+    /* Adjust the nav links for mobile */
+    .nav .ele {
+      padding: 10px 15px;
+      width: 100%;
+      text-align: center;
+      margin: 5px 0;
+    }
+    
+    /* For the dropdown, you might want to modify its behavior on mobile.
+       For example, here we let it display as a normal list. */
+    .dropdown-content {
+      position: static;
+      box-shadow: none;
+      transform: none;
+      opacity: 1;
+      display: none; /* Hide by default; consider adding a toggle if needed */
+    }
+    
+    /* Optionally, if you want the dropdown to appear on tap (instead of hover),
+       you can add extra JavaScript or CSS to toggle a class here. */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  }
+  

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+.container {
+    position: absolute;
+    padding-top: 90px;
+    top: 50px;
+}
+
+.section {
+    padding-top: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom:10px;
+}
+   
+.section p,
+.section li,
+.section th {
+    font-size: 20px;
+}
+
+.section td {
+    font-size: 17px;
+}
+
+  .latex-part {
+    color: #333;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  
+
+  .latex-part h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .latex-part h2 {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+
+
+  .formulas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+  }
+
+.formula {
+    size: 23px;
+}
+  
+
+  
+li {
+    padding-left: 10px;
+}
